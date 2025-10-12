@@ -11,6 +11,110 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* Flip Card Styles */
+			.flip-card {
+				background-color: transparent;
+				width: 100%;
+				height: 400px;
+				perspective: 1000px;
+				cursor: pointer;
+				flex: 0 0 40%;
+				margin-right: 20px;
+			}
+
+			.flip-card-inner {
+				position: relative;
+				width: 100%;
+				height: 100%;
+				text-align: center;
+				transition: transform 0.6s;
+				transform-style: preserve-3d;
+			}
+
+			.flip-card.flipped .flip-card-inner {
+				transform: rotateY(180deg);
+			}
+
+			.flip-card-front, .flip-card-back {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				backface-visibility: hidden;
+				border-radius: 8px;
+				overflow: hidden;
+			}
+
+			.flip-card-front img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+
+			.flip-card-back {
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				color: white;
+				transform: rotateY(180deg);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				padding: 20px;
+				box-sizing: border-box;
+			}
+
+			.project-details h3 {
+				margin: 0 0 15px 0;
+				font-size: 1.5em;
+			}
+
+			.project-details p {
+				margin: 8px 0;
+				line-height: 1.4;
+			}
+
+			.project-details ul {
+				text-align: left;
+				margin: 10px 0;
+				padding-left: 20px;
+			}
+
+			.project-details li {
+				margin: 5px 0;
+				font-size: 0.9em;
+			}
+
+			.flip-hint-text {
+				font-size: 0.8em;
+				opacity: 0.7;
+				margin-top: 10px;
+				color: #ccc;
+				font-style: italic;
+			}
+
+			.flip-hint-text:before {
+				content: "← ";
+				font-weight: bold;
+				color: white;
+				font-size: 1.2em;
+			}
+
+			/* Make download button full width */
+			.actions {
+				display: flex !important;
+				flex-direction: column !important;
+				align-items: stretch !important;
+			}
+
+			.actions li {
+				margin: 0 !important;
+				width: 100% !important;
+			}
+
+			.actions .button {
+				width: 100% !important;
+				text-align: center !important;
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -45,26 +149,70 @@
 				<!-- One -->
 					<section id="one" class="wrapper style2 spotlights">
 						<section>
-							<a href="#" class="image"><img src="ZeldaPicture.png" alt="Zelda Game Screenshot" data-position="center center" /></a>
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="ZeldaPicture.png" alt="Zelda Game Screenshot" data-position="center center" />
+									</div>
+									<div class="flip-card-back">
+										<div class="project-details">
+											<h3>The Legend of Zelda (NES Remake)</h3>
+											<p><strong>Technologies:</strong> Unity, C#</p>
+											<p><strong>Features Developed:</strong></p>
+											<ul>
+												<li>Dungeon room navigation system with seamless transitions</li>
+												<li>Interactive item system with unique abilities</li>
+												<li>Character animations and grid locked movement</li>
+												<li>Interactive room mechanics and hidden areas</li>
+												<li>Custom clone mechanic level (press 4 in game to use)</li>
+											</ul>
+											<p>This project involved recreating the first Zelda NES dungeon using modern Unity development practices.</p>
+										</div>
+									</div>
+								</div>
+							</div>
 							<div class="content">
 								<div class="inner">
-									<h2>The Legend of Zelda (Unity Remaster)</h2>
-									<p>I developed multiple different room features, items with different interactions and abilities, and other overall basic features of the Zelda game.</p>
+									<h2>The Legend of Zelda (NES Remake)</h2>
+									<p>I developed the first dungeon of the original NES Zelda game including room features, items, weapons, and other overall basic features of the Zelda game.</p>
 									<ul class="actions">
 										<li><a href="ZeldaGolden.zip" class="button" download>Download Game</a></li>
 									</ul>
+									<p class="flip-hint-text">Click image for details</p>
 								</div>
 							</div>
 						</section>
 						<section>
-							<a href="#" class="image"><img src="Afterstep.png" alt="Afterstep Game Screenshot" data-position="top center" /></a>
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="Afterstep.png" alt="Afterstep Game Screenshot" data-position="top center" />
+									</div>
+									<div class="flip-card-back">
+										<div class="project-details">
+											<h3>Afterstep</h3>
+											<p><strong>Technologies:</strong> Unity, C#</p>
+											<p><strong>Features Developed:</strong></p>
+											<ul>
+												<li>Movement recorder and replay system</li>
+												<li>Enemy AI with color indications of different behaviors</li>
+												<li>Level guided mechanics introductions</li>
+												<li>Interactive strategy-focused level design</li>
+												<li>Unique ghost summon mechanic to assist players</li>
+											</ul>
+											<p>This project involved designing and developing a unique game mechanic and level to introduce it to players.</p>
+										</div>
+									</div>
+								</div>
+							</div>
 							<div class="content">
 								<div class="inner">
 									<h2>Afterstep</h2>
-									<p>My latest game project featuring innovative gameplay mechanics and engaging story elements.</p>
+									<p>I designed a game that, through the use of a ghost summon feature, teaches players new mechanics as they progress through the game.</p>
 									<ul class="actions">
 										<li><a href="Afterstep.zip" class="button" download>Download Game</a></li>
 									</ul>
+									<p class="flip-hint-text">Click image for details</p>
 								</div>
 							</div>
 						</section>
@@ -149,6 +297,20 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+			<script>
+				// Flip Card Functionality
+				document.addEventListener('DOMContentLoaded', function() {
+					const flipCards = document.querySelectorAll('.flip-card');
+					
+					flipCards.forEach(card => {
+						card.addEventListener('click', function() {
+							// Just toggle the clicked card - no need to close others
+							card.classList.toggle('flipped');
+						});
+					});
+				});
+			</script>
 
 	</body>
 </html>
