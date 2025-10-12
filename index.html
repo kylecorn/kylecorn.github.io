@@ -12,6 +12,18 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<style>
+			/* Fade-in animation for flip cards */
+			.flip-card {
+				opacity: 0;
+				transform: translateY(30px);
+				transition: opacity 0.8s ease, transform 0.8s ease;
+			}
+
+			.flip-card.fade-in {
+				opacity: 1;
+				transform: translateY(0);
+			}
+
 			/* Flip Card Styles */
 			.flip-card {
 				background-color: transparent;
@@ -280,11 +292,31 @@
 				document.addEventListener('DOMContentLoaded', function() {
 					const flipCards = document.querySelectorAll('.flip-card');
 					
+					// Add click functionality
 					flipCards.forEach(card => {
 						card.addEventListener('click', function() {
 							// Just toggle the clicked card - no need to close others
 							card.classList.toggle('flipped');
 						});
+					});
+
+					// Add scroll reveal animation
+					const observerOptions = {
+						threshold: 0.2,
+						rootMargin: '0px 0px -100px 0px'
+					};
+
+					const observer = new IntersectionObserver(function(entries) {
+						entries.forEach(entry => {
+							if (entry.isIntersecting) {
+								entry.target.classList.add('fade-in');
+								observer.unobserve(entry.target);
+							}
+						});
+					}, observerOptions);
+
+					flipCards.forEach(card => {
+						observer.observe(card);
 					});
 				});
 			</script>
