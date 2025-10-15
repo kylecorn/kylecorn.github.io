@@ -61,6 +61,11 @@
 				width: 100%;
 				height: 100%;
 				object-fit: cover;
+				object-position: left center;
+				border: 2px solid #000;
+				border-radius: 4px;
+				margin: 4px;
+				box-sizing: border-box;
 			}
 
 			.flip-card-back {
@@ -222,7 +227,7 @@
 									<h2>Afterstep</h2>
 									<p>I designed a game that, through the use of a ghost summon feature, teaches players new mechanics as they progress through the levels.</p>
 									<ul class="actions">
-										<li><a href="Afterstep.zip" class="button" download>Download Game</a></li>
+										<li><a href="https://kjcornell.itch.io/afterstep" class="button" target="_blank">Play Game</a></li>
 									</ul>
 									<p class="flip-hint-text">Click image for details</p>
 								</div>
@@ -240,10 +245,22 @@
 							<!-- Resume Download Section -->
 							<div class="resume-section" style="text-align: center; margin: 30px 0;">
 								<h3>📄 Resume</h3>
-								<p>Download my resume to learn more about my experience and skills</p>
-								<ul class="actions" style="justify-content: center;">
+								<p>Download my resume or view it directly in your browser</p>
+								<ul class="actions" style="justify-content: center; flex-wrap: wrap;">
 									<li><a href="Kyle_Cornell_Resume.pdf" class="button primary" download>Download Resume</a></li>
+									<li><a href="#" class="button" id="toggleResume">View Resume</a></li>
 								</ul>
+								
+								<!-- Expandable Resume Viewer -->
+								<div id="resumeViewer" style="display: none; margin-top: 30px; max-width: 900px; margin-left: auto; margin-right: auto;">
+									<div style="position: relative; padding-bottom: 20px;">
+										<iframe src="Kyle_Cornell_Resume.pdf#toolbar=0&navpanes=0&scrollbar=1" 
+											style="width: 100%; height: 800px; border: 2px solid #667eea; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"
+											type="application/pdf">
+											<p>Your browser doesn't support embedded PDFs. <a href="Kyle_Cornell_Resume.pdf" download>Click here to download the resume instead.</a></p>
+										</iframe>
+									</div>
+								</div>
 							</div>
 
 							<!-- Contact Information -->
@@ -318,6 +335,28 @@
 					flipCards.forEach(card => {
 						observer.observe(card);
 					});
+
+					// Resume Viewer Toggle
+					const toggleButton = document.getElementById('toggleResume');
+					const resumeViewer = document.getElementById('resumeViewer');
+					
+					if (toggleButton && resumeViewer) {
+						toggleButton.addEventListener('click', function(e) {
+							e.preventDefault();
+							
+							if (resumeViewer.style.display === 'none') {
+								resumeViewer.style.display = 'block';
+								toggleButton.textContent = 'Hide Resume';
+								// Smooth scroll to resume viewer
+								setTimeout(function() {
+									resumeViewer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+								}, 100);
+							} else {
+								resumeViewer.style.display = 'none';
+								toggleButton.textContent = 'View Resume';
+							}
+						});
+					}
 				});
 			</script>
 
