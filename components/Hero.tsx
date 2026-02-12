@@ -2,6 +2,8 @@
 
 import { motion } from 'framer-motion'
 import { ArrowDown, Code2, GraduationCap } from 'lucide-react'
+import Image from 'next/image'
+import { bio } from '@/lib/data'
 
 export default function Hero() {
   return (
@@ -64,8 +66,7 @@ export default function Hero() {
         transition={{ delay: 0.6, duration: 0.6 }}
         className="text-text-muted font-sans leading-relaxed text-base mb-8 max-w-lg"
       >
-        Building games, web apps, and exploring the intersection of code and creativity. 
-        Welcome to my portfolio of personal projects and development work.
+        {bio.description}
       </motion.p>
       
       <motion.div
@@ -94,6 +95,25 @@ export default function Hero() {
             <span>;</span>
           </div>
         </div>
+      </motion.div>
+      
+      {/* Image at bottom */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.2, duration: 0.6 }}
+        className="mt-6 relative w-full h-64 rounded-lg overflow-hidden border border-border-gray group/image"
+      >
+        <Image
+          src="/FreshmanYearChemPic.png"
+          alt="Freshman Year Chemistry"
+          fill
+          className="object-cover group-hover/image:scale-105 transition-transform duration-500"
+          style={{
+            objectPosition: 'center 25%'
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-oled-black/60 via-transparent to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity duration-300" />
       </motion.div>
     </motion.div>
   )

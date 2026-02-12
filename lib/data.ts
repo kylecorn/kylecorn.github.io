@@ -2,18 +2,20 @@ export const bio = {
   name: "Kyle Cornell",
   title: "Computer Science Student",
   location: "University of Michigan",
-  description: "Welcome to my portfolio showcasing personal projects and development work.",
+  description: "B.S.E in Computer Science, Expected May 2027. Software engineer with experience in full-stack development, AI integration, AR/XR, and game development.",
   email: "kylcorn@umich.edu",
   phone: "(616) 337-2029",
   linkedin: "https://www.linkedin.com/in/kylecornell04/",
   github: "https://github.com/kylecorn",
-  resume: "/Kyle_Cornell_Resume.pdf",
+  resume: "/Feb2026Resume.pdf",
+  website: "kylecorn.github.io",
 }
 
 export const techStack = {
-  languages: ["Python", "SQL", "JavaScript", "TypeScript", "C#", "Java", "C++"],
-  frameworks: ["React", "Next.js", "Node.js", "Unity"],
-  tools: ["Git", "Docker", "PostgreSQL", "MongoDB", "AWS"],
+  languages: ["C/C++", "C#", "Python", "Java", "JavaScript", "TypeScript", "Assembly", "MATLAB", "SQL", "HTML", "CSS"],
+  frameworks: ["Unreal Engine", "Unity", "AWS", "Cesium", "React", "Mixed Reality", "Node.js", "Tailwind CSS", "Pandas", "Gmail SMTP"],
+  tools: ["GitHub", "Azure DevOps", "Visual Studio Code", "MongoDB", "Figma", "Cursor", "Docker", "Jupyter Notebook"],
+  apis: ["Google Gemini", "Web Speech", "REST", "ARKIT", "Google Calendar", "OAuth 2.0", "Vercel"],
 }
 
 export interface Project {
@@ -107,11 +109,43 @@ export const projects: Project[] = [
   },
 ]
 
+// Experience ordered from most recent to least recent (left to right, top to bottom)
 export const experience = [
   {
-    title: "Computer Science Student",
-    company: "University of Michigan",
-    period: "Present",
-    description: "Pursuing a degree in Computer Science with focus on software engineering and game development.",
+    title: "Software Engineer Intern",
+    company: "Rekkie",
+    period: "Dec 2025 - Present",
+    description: "Improving elevation analysis accuracy in Swift and C++ by implementing data-selection algorithms that remove irrelevant inputs from live location data while preserving relevant data and statistical measurements.",
+  },
+  {
+    title: "Aegis | AI-Powered Scheduling Assistant",
+    company: "Personal Project",
+    period: "December 2025 - Present",
+    description: "Engineering an AI-powered scheduling assistant landing page using Google's Gemini API, Gmail SMTP, and Node.js. Reformatting user requests through backend development integrating the AI assistant with a preexisting N8N workflow.",
+  },
+  {
+    title: "AI Software Engineer (Analyst Role)",
+    company: "High Five Spirits",
+    period: "August 2025 - December 2025",
+    description: "Engineered an end-to-end AI lead generation pipeline, integrating Google's Gemini API for client profiling, automated web scraping for contact discovery, and streamlined email outreach; slashing manual research time by 90%.",
+  },
+  {
+    title: "Full-Stack Software Developer (Analyst Role)",
+    company: "Live Time",
+    period: "January 2025 - July 2025",
+    description: "Led a team of 6 to build a brand outreach webpage using HTML/CSS and React, enhancing the social media platform connecting over 4,000 university students with organizations across 5+ college campuses.",
+  },
+  {
+    title: "AR/XR Summer Development Intern (Unity/Unreal)",
+    company: "Jovian Software Consulting",
+    period: "May 2023 - August 2024",
+    description: "Co-led 10 team members, planned sprint meetings, and performed live simulation demos to military personnel and clients. Built and hosted a local server to run interconnected devices assuring no security vulnerabilities.",
+  },
+  {
+    title: "Software Development Intern",
+    company: "Jovian Software Consulting",
+    period: "November 2022 - May 2023",
+    description: "Employed TypeScript and CSS to create a smooth user interface for an Electron-based web application. Combined 3 contracted projects to deliver a centralized application improving company's creation capabilities by 100%.",
   },
 ]
+

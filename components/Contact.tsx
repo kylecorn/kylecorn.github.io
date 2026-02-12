@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, AnimatePresence } from 'framer-motion'
-import { Mail, Phone, Linkedin, FileText, ExternalLink, Download, MessageCircle } from 'lucide-react'
+import { Mail, Phone, Linkedin, FileText, ExternalLink, Download, MessageCircle, Github } from 'lucide-react'
 import { bio } from '@/lib/data'
 import { useState } from 'react'
 
@@ -28,6 +28,13 @@ export default function Contact() {
       external: true,
       color: 'accent-pink',
     },
+    {
+      icon: Github,
+      label: 'GitHub',
+      href: bio.github,
+      external: true,
+      color: 'accent-amber',
+    },
   ]
 
   return (
@@ -50,6 +57,7 @@ export default function Contact() {
             'accent-coral': 'bg-accent-coral/10 border-accent-coral/20 group-hover:bg-accent-coral/20 text-accent-coral',
             'accent-teal': 'bg-accent-teal/10 border-accent-teal/20 group-hover:bg-accent-teal/20 text-accent-teal',
             'accent-pink': 'bg-accent-pink/10 border-accent-pink/20 group-hover:bg-accent-pink/20 text-accent-pink',
+            'accent-amber': 'bg-accent-amber/10 border-accent-amber/20 group-hover:bg-accent-amber/20 text-accent-amber',
           }
           return (
             <motion.a

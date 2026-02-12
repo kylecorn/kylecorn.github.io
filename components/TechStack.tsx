@@ -2,13 +2,14 @@
 
 import { motion } from 'framer-motion'
 import { techStack } from '@/lib/data'
-import { Terminal, Code, Wrench } from 'lucide-react'
+import { Terminal, Code, Wrench, Zap } from 'lucide-react'
 
 export default function TechStack() {
   const categories = [
     { icon: Code, title: 'Languages', items: techStack.languages, color: 'accent-coral' },
     { icon: Terminal, title: 'Frameworks', items: techStack.frameworks, color: 'accent-teal' },
     { icon: Wrench, title: 'Tools', items: techStack.tools, color: 'accent-amber' },
+    { icon: Zap, title: 'APIs', items: techStack.apis, color: 'accent-pink' },
   ]
 
   return (
@@ -30,6 +31,7 @@ export default function TechStack() {
             'accent-coral': 'text-accent-coral',
             'accent-teal': 'text-accent-teal',
             'accent-amber': 'text-accent-amber',
+            'accent-pink': 'text-accent-pink',
           }
           return (
             <motion.div

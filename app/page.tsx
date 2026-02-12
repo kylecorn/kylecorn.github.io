@@ -1,31 +1,16 @@
 'use client'
 
-import { useState } from 'react'
-import dynamic from 'next/dynamic'
 import Hero from '@/components/Hero'
+import AboutMe from '@/components/AboutMe'
 import TechStack from '@/components/TechStack'
 import ProjectCard from '@/components/ProjectCard'
-import Timeline from '@/components/Timeline'
+import ExperienceCard from '@/components/ExperienceCard'
 import Contact from '@/components/Contact'
-import ViewToggle from '@/components/ViewToggle'
-import { projects } from '@/lib/data'
-
-// Dynamically import 3D world to avoid SSR issues
-const World3D = dynamic(() => import('@/components/World3D'), {
-  ssr: false,
-})
+import { projects, experience } from '@/lib/data'
 
 export default function Home() {
-  const [is3D, setIs3D] = useState(false)
-
   return (
-    <>
-      <ViewToggle is3D={is3D} onToggle={() => setIs3D(!is3D)} />
-      
-      {is3D ? (
-        <World3D onExit={() => setIs3D(false)} />
-      ) : (
-        <main className="min-h-screen p-4 md:p-8 lg:p-12 relative">
+    <main className="min-h-screen p-4 md:p-8 lg:p-12 relative">
           {/* Subtle grid overlay for depth */}
           <div className="fixed inset-0 pointer-events-none opacity-[0.02]"
             style={{
@@ -43,8 +28,16 @@ export default function Home() {
               {/* Hero Section - Spans 6 columns on large screens */}
               <Hero />
               
-              {/* Tech Stack - Spans 6 columns on large screens */}
-              <TechStack />
+              {/* Interests Section - Spans 6 columns on large screens */}
+              <AboutMe />
+              
+              {/* Personal Projects Section Header */}
+              <div className="col-span-full mt-4 mb-2">
+                <h2 className="mono-heading text-3xl md:text-4xl">
+                  Personal Projects
+                </h2>
+                <div className="w-16 h-1 bg-gradient-to-r from-accent-coral via-accent-amber to-accent-teal rounded-full mt-2" />
+              </div>
               
               {/* Projects - Each spans 6 columns */}
               {projects.map((project, index) => (
@@ -56,8 +49,26 @@ export default function Home() {
                 />
               ))}
               
-              {/* Timeline - Spans 6 columns */}
-              <Timeline />
+              {/* Experience Section Header */}
+              <div className="col-span-full mt-8 mb-2">
+                <h2 className="mono-heading text-3xl md:text-4xl">
+                  Experience
+                </h2>
+                <div className="w-16 h-1 bg-gradient-to-r from-accent-coral via-accent-amber to-accent-teal rounded-full mt-2" />
+              </div>
+              
+              {/* Experience Cards - Each spans 6 columns */}
+              {experience.map((exp, index) => (
+                <ExperienceCard
+                  key={`${exp.company}-${exp.period}`}
+                  experience={exp}
+                  index={index}
+                  span="col-span-full lg:col-span-6"
+                />
+              ))}
+              
+              {/* Tech Stack - Spans 6 columns on large screens */}
+              <TechStack />
               
               {/* Contact - Spans 6 columns */}
               <Contact />
@@ -70,8 +81,6 @@ export default function Home() {
               Built with Next.js, Tailwind CSS, and Framer Motion
             </p>
           </footer>
-        </main>
-      )}
-    </>
+    </main>
   )
 }
