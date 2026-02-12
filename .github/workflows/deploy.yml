@@ -27,8 +27,14 @@ jobs:
           node-version: '20'
           cache: 'npm'
       
+      - name: Clean previous builds
+        run: |
+          rm -rf .next
+          rm -rf out
+          rm -rf node_modules/.cache
+      
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --no-audit
       
       - name: Build
         run: npm run build
