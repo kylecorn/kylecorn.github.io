@@ -7,7 +7,7 @@ export const bio = {
   phone: "(616) 337-2029",
   linkedin: "https://www.linkedin.com/in/kylecornell04/",
   github: "https://github.com/kylecorn",
-  resume: "/Feb2026Resume.pdf",
+  resume: "/February2026Resume.pdf",
   website: "kylecorn.github.io",
 }
 
