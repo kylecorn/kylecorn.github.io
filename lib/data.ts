@@ -2,7 +2,7 @@ export const bio = {
   name: "Kyle Cornell",
   title: "Computer Science Student",
   location: "University of Michigan",
-  description: "B.S.E in Computer Science, Expected May 2027. Software engineer with experience in full-stack development, AI integration, AR/XR, and game development.",
+  description: "B.S.E in Computer Science, Expected May 2027. I'm interested in pursuing a career in Software Engineering and Product Management with experience in full-stack development, Project Managemet, Tech Consulting AI integration, AR/XR, and game development.",
   email: "kylcorn@umich.edu",
   phone: "(616) 337-2029",
   linkedin: "https://www.linkedin.com/in/kylecornell04/",
