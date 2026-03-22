@@ -25,7 +25,8 @@ export interface Project {
   longDescription: string
   technologies: string[]
   features: string[]
-  image: string
+  /** Cover image for the project card */
+  image?: string
   imagePosition?: string // Optional custom image positioning (e.g., "center right", "bottom center")
   demo: string | null
   download: string | null
@@ -104,6 +105,24 @@ export const projects: Project[] = [
     ],
     image: "/VRClassroom.png",
     demo: "https://www.youtube.com/watch?v=beETndPZri0",
+    download: null,
+    repo: null,
+  },
+  {
+    id: "a2go",
+    title: "A2GO",
+    description:
+      "A Pokemon Go clone where you can explore the world, plant and grow new types of trees, and defend your trees from attacking squirrels. Remember to check the weather before you go out, it can have some unexpected effects!",
+    longDescription:
+      "A2GO was developed as part of EECS 440 (University of Michigan), applying core ML ideas from the course to a concrete project with an accompanying video walkthrough.",
+    technologies: ["Unity", "C#"],
+    features: [
+      "University of Michigan EECS 440 coursework",
+      "End-to-end project with recorded demo",
+      "Applied ML concepts from lecture and assignments",
+    ],
+    image: "/A2GOCover.png",
+    demo: "/A2.mp4",
     download: null,
     repo: null,
   },

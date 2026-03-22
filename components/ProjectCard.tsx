@@ -11,6 +11,13 @@ interface ProjectCardProps {
   span?: string
 }
 
+function getDemoButtonLabel(demoUrl: string): string {
+  const lower = demoUrl.toLowerCase()
+  if (lower.includes('youtube.com') || lower.includes('youtu.be')) return 'Watch Demo'
+  if (/\.(mp4|webm|ogg)(\?|$)/i.test(lower)) return 'Watch Video'
+  return 'Play Game'
+}
+
 export default function ProjectCard({ project, index, span = 'col-span-full lg:col-span-6' }: ProjectCardProps) {
   return (
     <motion.div
@@ -23,17 +30,19 @@ export default function ProjectCard({ project, index, span = 'col-span-full lg:c
       <div className="absolute inset-0 bg-gradient-to-br from-accent-coral/0 via-accent-amber/0 to-accent-teal/0 group-hover:from-accent-coral/10 group-hover:via-accent-amber/5 group-hover:to-accent-teal/10 transition-all duration-500 pointer-events-none" />
       
       {/* Project image */}
-      <div className="relative w-full h-56 mb-6 rounded-lg overflow-hidden border border-border-gray group-hover:border-accent-coral/40 transition-all duration-300">
-        <Image
-          src={project.image}
-          alt={project.title}
-          fill
-          className="object-cover group-hover:scale-110 transition-transform duration-500"
-          style={{
-            objectPosition: project.imagePosition || 'left center'
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-oled-black/80 via-oled-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <div className="relative w-full h-56 mb-6 rounded-lg overflow-hidden border border-border-gray group-hover:border-accent-coral/40 transition-all duration-300 bg-oled-black">
+        {project.image ? (
+          <Image
+            src={project.image}
+            alt={project.title}
+            fill
+            className="object-cover group-hover:scale-110 transition-transform duration-500"
+            style={{
+              objectPosition: project.imagePosition || 'left center'
+            }}
+          />
+        ) : null}
+        <div className="absolute inset-0 bg-gradient-to-t from-oled-black/80 via-oled-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
         
         {/* Decorative corner accent */}
         <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -80,7 +89,7 @@ export default function ProjectCard({ project, index, span = 'col-span-full lg:c
             onClick={(e) => e.stopPropagation()}
           >
             <ExternalLink className="w-4 h-4 group-hover/btn:rotate-12 transition-transform" />
-            <span>{project.demo.includes('youtube.com') || project.demo.includes('youtu.be') ? 'Watch Demo' : 'Play Game'}</span>
+            <span>{getDemoButtonLabel(project.demo)}</span>
           </a>
         )}
         {project.download && (
