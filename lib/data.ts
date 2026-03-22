@@ -122,7 +122,7 @@ export const projects: Project[] = [
       "Applied ML concepts from lecture and assignments",
     ],
     image: "/A2GOCover.png",
-    demo: "/A2.mp4",
+    demo: "https://youtu.be/VhAmOj6u7-w",
     download: null,
     repo: null,
   },
