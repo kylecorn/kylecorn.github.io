@@ -31,6 +31,8 @@ export interface Project {
   demo: string | null
   download: string | null
   repo: string | null
+  /** Official website for the project, linked inline in the description */
+  website?: string
 }
 
 export const projects: Project[] = [
@@ -125,6 +127,26 @@ export const projects: Project[] = [
     demo: "https://youtu.be/VhAmOj6u7-w",
     download: null,
     repo: null,
+  },
+  {
+    id: "emergensimvr",
+    title: "EmergenSimVR",
+    description:
+      "A VR emergency simulation training platform that both teaches users and provides real world training scenarios. Check out our product website at:",
+    longDescription:
+      "EmergenSimVR is a virtual reality training platform built to prepare emergency responders for high-pressure field scenarios. Trainees navigate immersive, hazard-filled environments and practice assessment and triage decisions before ever facing them in the real world.",
+    technologies: ["Unreal Engine", "C++", "VR Headset SDK"],
+    features: [
+      "Immersive VR emergency-scene simulations built in Unreal Engine",
+      "Realistic hazard environments with multi-casualty triage scenarios",
+      "Native VR headset SDK integration for headset input and locomotion",
+      "C++ systems driving scenario logic and interactive props",
+    ],
+    image: "/EmergenSimVR.png",
+    demo: "https://www.youtube.com/watch?v=0VfCERdLI8k",
+    download: null,
+    repo: null,
+    website: "https://gkm-industries.vercel.app/",
   },
 ]
 

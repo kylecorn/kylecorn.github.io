@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowDown, Code2, GraduationCap } from 'lucide-react'
+import { ArrowDown, GraduationCap } from 'lucide-react'
 import Image from 'next/image'
 import { bio } from '@/lib/data'
 
@@ -13,96 +13,72 @@ export default function Hero() {
       transition={{ duration: 0.6 }}
       className="col-span-full lg:col-span-6 bento-card relative"
     >
-      {/* Decorative code brackets */}
-      <div className="absolute top-6 right-6 opacity-10">
-        <Code2 className="w-16 h-16 text-accent-coral" />
-      </div>
-      
-      <motion.div
+      <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.2, duration: 0.6 }}
-        className="flex items-center gap-3 mb-4"
+        className="font-mono text-xs uppercase tracking-widest text-stone mb-4"
       >
-        <div className="w-2 h-2 rounded-full bg-accent-coral animate-pulse" />
-        <span className="font-mono text-sm text-text-muted">available for opportunities</span>
-      </motion.div>
-      
+        Available for opportunities
+      </motion.p>
+
       <motion.h1
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.3, duration: 0.6 }}
-        className="font-mono text-5xl md:text-7xl font-bold mb-6 leading-tight"
+        className="font-serif text-5xl md:text-7xl font-semibold mb-6 leading-tight text-ink"
       >
-        <span className="gradient-text">Kyle</span>
+        Kyle
         <br />
-        <span className="text-white">Cornell</span>
+        Cornell
       </motion.h1>
-      
+
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.4, duration: 0.6 }}
-        className="flex items-center gap-3 mb-4"
+        className="flex items-center gap-3 mb-2"
       >
-        <GraduationCap className="w-5 h-5 text-accent-amber" />
-        <p className="text-xl text-white font-sans font-medium">
+        <GraduationCap className="w-5 h-5 text-clay" />
+        <p className="text-xl text-ink font-sans font-medium">
           Computer Science Student
         </p>
       </motion.div>
-      
+
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5, duration: 0.6 }}
-        className="text-accent-teal font-mono text-sm mb-6"
+        className="text-stone font-sans text-sm mb-6"
       >
-        {'>'} University of Michigan
+        University of Michigan
       </motion.p>
-      
+
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.6, duration: 0.6 }}
-        className="text-text-muted font-sans leading-relaxed text-base mb-8 max-w-lg"
+        className="text-stone font-sans leading-relaxed text-base mb-8 max-w-lg"
       >
         {bio.description}
       </motion.p>
-      
+
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.7, duration: 0.6 }}
-        className="flex items-center gap-3 text-sm text-text-muted font-mono group cursor-pointer"
+        className="flex items-center gap-3 text-sm text-stone font-sans group cursor-pointer"
       >
-        <ArrowDown className="w-4 h-4 group-hover:text-accent-coral transition-colors animate-bounce" />
-        <span className="group-hover:text-accent-coral transition-colors">Scroll to explore</span>
+        <ArrowDown className="w-4 h-4 group-hover:text-clay transition-colors" />
+        <span className="group-hover:text-clay transition-colors">Scroll to explore</span>
       </motion.div>
-      
-      {/* Subtle code snippet decoration */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 0.6 }}
-        className="mt-8 pt-6 border-t border-border-gray/50"
-      >
-        <div className="font-mono text-xs text-text-muted/50 space-y-1">
-          <div className="flex gap-4">
-            <span className="text-accent-pink">const</span>
-            <span className="text-accent-teal">developer</span>
-            <span>=</span>
-            <span className="text-accent-amber">true</span>
-            <span>;</span>
-          </div>
-        </div>
-      </motion.div>
-      
+
       {/* Image at bottom */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 0.6 }}
-        className="mt-6 relative w-full h-64 rounded-lg overflow-hidden border border-border-gray group/image"
+        transition={{ delay: 0.9, duration: 0.6 }}
+        className="mt-8 relative w-full h-64 rounded overflow-hidden border border-sand-dark group/image"
       >
         <Image
           src="/FreshmanYearChemPic.png"
@@ -113,7 +89,6 @@ export default function Hero() {
             objectPosition: 'center 25%'
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-oled-black/60 via-transparent to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity duration-300" />
       </motion.div>
     </motion.div>
   )
