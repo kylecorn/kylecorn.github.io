@@ -61,6 +61,16 @@ export default function AboutMe() {
           </div>
         </motion.div>
       </div>
+
+      <motion.p
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.4, duration: 0.4 }}
+        className="mt-6 text-stone font-sans text-base leading-relaxed"
+      >
+        On a lighter note — I've been completely swept up in World Cup fever. Watching the U.S. men's
+        team compete on home soil has been electric, and I'm genuinely thrilled to see how far they go.
+      </motion.p>
     </motion.div>
   )
 }
